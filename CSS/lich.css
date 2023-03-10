@@ -1,0 +1,20 @@
+table{
+    width: 550px;
+    height: 120px;
+    border-collapse: collapse;
+    border-width: 4px;
+    border-color: yellow
+    ;
+}
+thead{color: blue;}
+
+.a{background-color: red;}
+.b{background-color: orange;}
+.c{background-color: blue;}
+.d{color: white;}
+.e{color: red;}
+.f{color: blue;}
+sub{color: black;}
+
+
+
