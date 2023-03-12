@@ -1,1 +1,13 @@
-td{ padding: 10px;}
+td{ 
+    height: 25px;}
+    table,tr{
+        border-collapse: collapse;
+    }
+.g{
+
+width: 60px !important;
+    }
+.a{color: blue;}
+.b{background-color: yellow;}
+.c{background-color: white;}
+.d{background-color: orange;}
