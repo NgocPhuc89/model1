@@ -4,18 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Year</title>
 </head>
 <body>
+    <caption><h2>Tính Năm Nhuận</h2></caption>
+    <input type="Number" placeholder="Nhập Năm" id="year">
+    <button type="button" onclick="check()">Kiểm Tra</button><br><br>
+    <input type="text" placeholder="Kết quả" id="result" readonly>
     <script>
-        let year = parseInt(prompt("Enter a Year"));
-        if(year%4 ==0){
-            if(year%100 ==0){
-                if(year%400 ==0){
-                alert(year  +  "là năm nhuận" )}
-                else{alert(year +  "là năm không nhuận")}
-            }else{alert(year +  "là năm nhuận")}
-        }else{alert(year +  "là năm không nhuận")}             
+        // function check() {
+        // let year = +document.getElementById('year').value;    
+        // let result="";
+        //  if(year%4 ==0 && year %100 !=0){
+        //     result= (year  +" "+ "là năm nhuận");
+        //  }
+        //     else if(year%400==0){
+        //         result= (year  +" "+ "là năm nhuận");
+        //     }
+        //         else {
+        //             result= (year  +" "+ "là không nhuận");}
+
+        //  document.getElementById('result').value = result ;
+        // }
+        // function check() {
+        // let year = +document.getElementById('year').value;    
+        // let result="";
+        // switch(true){
+        //     case (year%4 ==0 && year%100 !=0):{
+        //         result= (year  +" "+ "là năm nhuận");
+        //         break ;
+        //     }
+        //     case (year%400 ==0 && year%100 ==0):{
+        //         result= (year  +" "+ "là năm nhuận");
+        //         break;
+        //     }
+        //     default : {
+        //         result= (year  +" "+ "là không nhuận");
+        //         break;
+        //     }
+        //     document.getElementById('result').value = result ;
+        //     }
+        // }
+        function check() {
+        let year = +document.getElementById('year').value;    
+        let result=`${(year%4==0 && year%100 !=0) ? " năm nhuận" :
+            (year%400==0) ? " năm nhuận":
+            " năm không nhuận"
+        }`;
+            document.getElementById('result').value = result;
+        }
     </script>
 </body>
 </html>
