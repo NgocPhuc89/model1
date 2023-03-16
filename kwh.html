@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <caption><h2>Bản Tính Tiền Điện</h2></caption>
+    <input type="number" placeholder="Nhập số điện tiêu thụ kwh" id="kwh">
+    <button type="button" onclick="check()">Kiểm Tra</button><br><br>
+    <input type="text" placeholder="Tổng tiền phải trả VND" id="VND">
+    <script>
+        // function check(){
+        //     let kwh = +document.getElementById('kwh').value ;
+        //     let VND = "" ;
+        //     if(kwh<=50){
+        //         VND = (kwh*1678);    
+        //     }
+        //     else if(kwh>50 && kwh<=100){
+        //         VND = ((kwh-50)*1734)+(50*1678);
+        //     }
+        //     else if(kwh>100 && kwh<=200){
+        //         VND = ((kwh-100)*2014)+(50*1734)+(50*1678);
+        //     }
+        //     else if(kwh>200 && kwh<=300){
+        //         VND = ((kwh-200)*2536)+(100*2014)+(50*1734)+(50*1678);
+        //     }
+        //     else if(kwh>300 && kwh<=400){
+        //         VND = ((kwh-300)*2834)+(100*2536)+(100*2014)+(50*1734)+(50*1678);
+        //     }
+        //     else if(kwh>400){
+        //         VND = ((kwh-400)*2927)+(100*2834)+(100*2536)+(100*2014)+(50*1734)+(50*1678);
+        //     }
+        //    document.getElementById('VND').value = VND;
+        // }
+        // function check(){
+        //     let kwh = +document.getElementById('kwh').value ;
+        //     let VND = "";
+        //     switch(true){
+        //         case (kwh<0):{
+        //             VND = "vui lòng nhập lại";
+        //         }
+        //         case (kwh<=50):{
+        //             VND = (kwh*1678);
+        //             break;
+        //         }
+        //         case (kwh>50 && kwh<=100):{
+        //             VND = ((kwh-50)*1734)+(50*1678);
+        //             break;
+        //         }
+        //         case (kwh>100 && kwh<=200):{
+        //             VND = ((kwh-100)*2014)+(50*1734)+(50*1678);
+        //         }
+        //         case (kwh>200 && kwh<=300):{
+        //             VND = ((kwh-200)*2536)+(100*2014)+(50*1734)+(50*1678);
+        //         }
+        //         case (kwh>300 && kwh<=400):{
+        //             VND = ((kwh-300)*2834)+(100*2536)+(100*2014)+(50*1734)+(50*1678);
+        //         }
+        //         case (kwh>400):{
+        //             VND = ((kwh-400)*2927)+(100*2834)+(100*2536)+(100*2014)+(50*1734)+(50*1678);
+        //         }
+        //     }
+        //     document.getElementById('VND').value = VND;
+        // }
+        function check(){
+            let kwh = +document.getElementById('kwh').value ;
+            let VND = `${(kwh<0) ? "Vui lòng nhập lại":
+        (kwh<=50) ? (kwh*1678):
+        (kwh>50 && kwh<=100) ? ((kwh-50)*1734)+(50*1678):
+        (kwh>100 && kwh<=200) ? ((kwh-100)*2014)+(50*1734)+(50*1678):
+        (kwh>200 && kwh<=300) ? ((kwh-200)*2536)+(100*2014)+(50*1734)+(50*1678):
+        (kwh>300 && kwh<=400) ? ((kwh-300)*2834)+(100*2536)+(100*2014)+(50*1734)+(50*1678):
+        ((kwh-400)*2927)+(100*2834)+(100*2536)+(100*2014)+(50*1734)+(50*1678)}`;
+             document.getElementById('VND').value = VND;   
+        }
+    </script>
+</body>
+</html>
