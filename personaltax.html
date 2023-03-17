@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personaltax</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border: solid 7px;
+            border-color:springgreen;
+        }
+        thead{
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <caption>
+            <h2 style="color: blue;">Bảng Tính Thu Nhập Cá Nhân</h2>
+        </caption>
+        <thead>
+            <tr>
+                <th>Bậc</th>
+                <th>Thu Nhập Tháng</th>
+                <th>Số Thuế Phải Nộp</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <td>1</td>
+                <td style="width: 170px;">TN <= 5tr </td>
+                <td style="width: 250px;">TN x 5%</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td> 5tr < TN <= 10tr </td>
+                <td>TN x 10% - 0.25tr </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td> 10tr < TN <= 18tr </td>
+                <td>TN x 15% - 0.75tr</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td> 18tr < TN <= 32tr </td>
+                <td>TN x 20% - 1.65tr</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td> 32tr < TN <= 52tr </td>
+                <td>TN x 25% - 3.25tr</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td> 52tr < TN <= 80tr </td>
+                <td>TN x 30% - 5.85tr</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>TN > 80tr </td>
+                <td>TN x 35% - 9.85tr</td>
+            </tr>
+            <tr>
+                <td>Nhập Số Tiền</td>
+                <td>
+                    <input id="money" type="number" placeholder="tr VND " style="width: 97%;">
+                </td>
+                <td>
+                    <input id="tatol" type="text" placeholder="Tổng Tiền Thuế Phải Nộp (tr)" style="width: 97%; color: blue;" disabled> 
+                </td>
+            </tr>
+            <tr>
+                <td colspan="">
+                    <button type="button" onclick="check()" style="width: 100% ; background-color: yellow ;">Kiểm Tra</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // function check(){
+        //     let money = +document.getElementById('money').value ;
+        //     let VND = "" ;
+        //     if(money<0){
+        //         VND = "Vui Lòng Nhập Lại";
+        //     }
+        //     else if(money<=5){
+        //         VND = money * (5/100) + "tr";
+        //     }
+        //     else if(money<=10){
+        //         VND = (money * 10/100) - 0.25 + "tr";
+        //     }
+        //     else if(money<=18){
+        //         VND = (money * 15/100) - 0.75 + "tr";
+        //     }
+        //     else if(money<=32){
+        //         VND = (money * 20/100) - 1.65 + "tr";
+        //     }
+        //     else if(money<=52){
+        //         VND = (money * 25/100) - 3.25 + "tr";
+        //     }
+        //     else if(money<=80){
+        //         VND = (money * 30/100) - 5.85 + "tr";
+        //     }
+        //     else {
+        //         VND = (money * 35/100) - 9.85 + "tr";
+        //     }
+        //     document.getElementById('tatol').value = VND ;
+        // }
+
+    //     function check(){
+    //         let money = Number(document.getElementById('money').value);
+    //         let VND = "";
+    //         switch(true){
+    //             case (money<0):{
+    //                 VND = "Vui Lòng Nhập Lại" ;
+    //                 break;
+    //             }
+    //             case (money <= 5):{
+    //                 VND = money * 5/100 + "tr";
+    //                 break;
+    //             }
+    //             case (money <= 10):{
+    //                 VND = (money * 10/100) - 0.25 + "tr";
+    //                 break;
+    //             }
+    //             case (money <= 18):{
+    //                 VND = (money * 15/100) -0.75 + "tr";
+    //                 break;
+    //             }
+    //             case (money <= 32):{
+    //                 VND = (money * 20/100) - 1.65 + "tr";
+    //                 break;
+    //             }
+    //             case ( money <= 52):{
+    //                 VND = (money * 25/100) - 3.25 + "tr";
+    //                 break;
+    //             }
+    //             case ( money <= 80):{
+    //                 VND = (money * 30/100) - 5.85 + "tr";
+    //                 break;
+    //             }
+    //             case (money > 80):{
+    //                 VND = (money * 35/100) -9.85 + "tr";
+    //                 break;
+    //             }
+    //         }
+    //     document.getElementById('tatol').value = VND ;
+    // }
+
+        function check(){
+            let money = Number(document.getElementById('money').value);
+            let VND = "";
+            VND = money < 0 ? "Vui Lòng Nhập Lại":
+                money <=5 ? money * 5/100 + "tr" :
+                money <=10 ? (money * 10/100) - 0.25 + "tr":
+                money <=18 ? (money * 15/100) - 0.75 + "tr":
+                money <=32 ? (money * 20/100) - 1.65 + "tr":
+                money <=52 ? (money * 25/100) - 3.25 + "tr":
+                money <=80 ? (money * 30/100) - 5.85 + "tr":
+                             (money * 35/100) - 9.85 + "tr";   
+            document.getElementById('tatol').value = VND ;
+        }
+    </script>
+</body>
+</html>
