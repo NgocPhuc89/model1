@@ -74,44 +74,130 @@
             let c = 4.9 ;
             let a = +document.getElementById('a').value;
             let b = +document.getElementById('b').value;
-            if(a<0 || b<0){
-                money = "Vui Lòng Nhập Lại";
-                total = "Vui Lòng Nhập Lại";
-                c = "";
-            }
-            else if(b==1){
-                money = a*(c/100)/12*b ;
-                total = money + a ;
-                c = 4.9;
-            }
-            else if(b<=3){
-                c = c + 0.5;
-                money = a*(c/100)/12*b;
-                total = money + a ;
-            }
-            else if(b<=6){
-                c = c + 1;
-                money = a*(c/100)/12*b;
-                total = money + a ;
-            }
-            else if(b<=9){
-                c = c + 1.5 ;
-                money = a*(c/100)/12*b ;
-                total = money + a ;
-            }
-            else if(b<=12){
-                c= c + 2 ;
-                money = a*(c/100)/12*b ;
-                total = money + a ;
-            }
-            else {
-                c = c + 2.4 ;
-                money = a*(c/100)/12*b ;
-                total = money + a ;
-            }
-            document.getElementById('money').value = money;
-            document.getElementById('total').value = total;
-            document.getElementById('c').value = c;
+            // if(a<0 || b<0){
+            //     money = "Vui Lòng Nhập Lại";
+            //     total = "Vui Lòng Nhập Lại";
+            //     c = "";
+            // }
+            // else if(b==1){
+            //     money = a*(c/100)/12*b ;
+            //     total = money + a ;
+            //     c = 4.9;
+            // }
+            // else if(b<=3){
+            //     c = c + 0.5;
+            //     money = a*(c/100)/12*b;
+            //     total = money + a ;
+            // }
+            // else if(b<=6){
+            //     c = c + 1;
+            //     money = a*(c/100)/12*b;
+            //     total = money + a ;
+            // }
+            // else if(b<=9){
+            //     c = c + 1.5 ;
+            //     money = a*(c/100)/12*b ;
+            //     total = money + a ;
+            // }
+            // else if(b<=12){
+            //     c= c + 2 ;
+            //     money = a*(c/100)/12*b ;
+            //     total = money + a ;
+            // }
+            // else {
+            //     c = c + 2.4 ;
+            //     money = a*(c/100)/12*b ;
+            //     total = money + a ;
+            // }
+            // document.getElementById('money').value = money;
+            // document.getElementById('total').value = total;
+            // document.getElementById('c').value = c;
+
+            // switch(true){
+            //     case (a<=0 || b<=0):{
+            //         money = "Vui Lòng Nhập Lại" ;
+            //         total = "Vui Lòng Nhập Lại" ;
+            //         c =""; 
+            //         break; 
+            //     }
+            //     case (b==1):{
+            //         c = 4.9 ;
+            //         money = a*(c/100)/12*b ;
+            //         total = money + a ; 
+            //         break ;
+            //     }
+            //     case (b<=3):{
+            //         c = c + 0.5 ;
+            //         money = a*(c/100)/12*b ;
+            //         total = money + a ;
+            //         break;
+            //     }
+            //     case (b<=6):{
+            //         c = c + 1 ;
+            //         money = a*(c/100)/12*b ;
+            //         total = money + a ;
+            //         break;
+            //     }
+            //     case (b<=9):{
+            //         c = c + 1.5 ;
+            //         money = a*(c/100)/12*b ;
+            //         total = money + a ;
+            //         break;
+            //     }
+            //     case (b<=12):{
+            //         c = c + 2;
+            //         money = a*(c/100)/12*b ;
+            //         total = money + a ;
+            //         break;
+            //     }
+            //     default :{
+            //         c = c + 2.4;
+            //         money = a*(c/100)/12*b ;
+            //         total = money + a ;
+            //         break;
+            //         }   
+
+            //  }
+            //  document.getElementById('money').value = money;
+            //  document.getElementById('total').value = total;
+            //  document.getElementById('c').value = c;
+
+            (a<=0 || b<=0)?(
+                money = "Vui Lòng Nhập Lại",
+                total = "Vui lòng NHập Lại",
+                c = ""
+                ):
+            (b==1)?(
+                c = 4.9,
+                money = a*(c/100)/12*b ,
+                total = money + a 
+                ):
+            (b<=3)?(
+                c = c + 0.5,
+                money = a*(c/100)/12*b ,
+                total = money + a
+            ):
+            (b<=6)?(
+                c = c + 1,
+                money = a*(c/100)/12*b ,
+                total = money + a
+            ):
+            (b<=9)?(
+                c = c + 1.5,
+                money = a*(c/100)/12*b ,
+                total = money + a
+            ):
+            (b<=12)?(
+                c = c + 2,
+                money = a*(c/100)/12*b ,
+                total = money + a):
+                (
+                c = c + 2.4,
+                money = a*(c/100)/12*b ,
+                total = money + a);
+             document.getElementById('money').value = money;
+             document.getElementById('total').value = total;
+             document.getElementById('c').value = c;
         }
     </script>
 </body>
