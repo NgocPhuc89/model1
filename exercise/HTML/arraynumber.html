@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arraynumber</title>
+</head>
+
+<body>
+    <!-- <script>
+        let numbers = [];
+        for (let i = 0; i < 10 ; i++){
+            numbers[i] = Math.floor(Math.random() * 21 );
+            if ( numbers[i] >= 10){
+                document.write("Số lớn hơn 10 :" + numbers[i] + "<br/>");
+            }
+        }
+        document.write("Dãy số ngẫu nhiên : [" + numbers + "]");
+    </script> -->
+
+    <!-- <script>
+        let numbers = [];
+        let max = 0;
+        let count = 0 ;
+        for (let i = 1; i <= 10; i++) {
+            numbers[i] = Math.floor(Math.random() * 100);
+            if (max < numbers[i]) {
+                max = numbers[i];
+                count = i  ;
+            }
+        }
+        document.write("Dãy số ngẫu nhiên :" + numbers + "<br/>");
+        document.write("Số lớn nhất là :" + max  + "<br/>");
+        document.write("Tại vị trí :" + count);
+    </script> -->
+
+    <!-- <script>
+        let size = +prompt('');
+        let numbers = [size];
+        let max = 0 ;
+        let count = 0 ;
+        let total = 0 ;
+        for (let i = 0; i < size ; i++ ){
+            numbers[i] = Math.floor(Math.random() * 100);
+            if ( max < numbers[i]){
+                max = numbers[i];
+                count = i + 1 ;
+            }
+            total = total + numbers[i];
+        }
+        document.write("Dãy số ngẫu nhiên :" + numbers + "<br/>");
+        document.write("Số lớn nhất là :" + max  + "<br/>");
+        document.write("Tại vị trí :" + count + "<br/>");
+        document.write("Giá trị trung bình : " + (total/size)  );
+    </script> -->
+
+    <!-- <script>
+        let size = +prompt('');
+        let min = +prompt('Nhập Min');
+        let max = +prompt('Nhập Max');
+        let numbers = [size];
+        let count = 0 ;
+        for ( let i = 0 ; i < size ; i++){
+            numbers[i] = Math.floor(Math.random() * (max - min +1) + min);
+            if(numbers[i] < 0){
+                count++ ;
+            }
+        }
+        document.write(numbers + "<br/>");
+        document.write(count);
+    </script> -->
+
+<!-- <script>
+    let size = +prompt('');
+    let min = +prompt('Nhập Min');
+    let max = +prompt('Nhập Max');
+    let V = +prompt('Nhập V')
+    let numbers = [size];
+    let count = 0 ;
+    for ( let i = 0 ; i < size ; i++){
+        numbers[i] = Math.floor(Math.random() * (max - min +1) + min);
+        if(numbers[i] == V){
+            count++
+        }
+    }
+    document.write(numbers + "<br/>");
+    if (count > 0){
+        
+        document.write(V + " is in the array and appear: " + count + ' time' );
+    } else{
+        document.write(V + " is not in the array");
+    }
+</script> -->
+<script>
+    let numbers = new Array(15);
+    for (let i = 0 ; i < numbers.length ; i++){
+        numbers[i] = Math.floor(Math.random() * 100);
+    }
+    document.write("Dãy số ngẫu nhiên : " + numbers + "<br/>");
+    numbers.sort(function(a , b) {return b - a});
+    document.write("Dãy số  giảm dần : " + numbers);
+</script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>matrix</title>
+</head>
+<body>
+    <script>
+        let matrix = [];
+        for (let i = 0 ; i < 5 ; i++ ){
+            matrix[i] = [];  
+             for ( let j = 0 ; j < 7 ; j++){ 
+             matrix[i][j]= Math.floor(Math.random() * 41 + 10); 
+            } 
+        }
+        document.write( matrix );
+    </script>
+</body>
+</html>
