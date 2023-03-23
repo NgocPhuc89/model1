@@ -13,12 +13,12 @@
     <script>
         function check(){
             let n = +document.getElementById('n').value;
-            let i = 0;
-            let total_1 = 1; 
+            let i = 1;
+            let s = 1; 
             let total = 0;
             for (; i <= n; i++) {
-                total_1 = total_1 * 1 ;
-                total += total_1;
+                 s *= i ;
+                total += s ;
             }
             document.getElementById('total').value = total;
         }
