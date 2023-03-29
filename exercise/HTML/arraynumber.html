@@ -93,7 +93,7 @@
         document.write(V + " is not in the array");
     }
 </script> -->
-<script>
+<!-- <script>
     let numbers = new Array(15);
     for (let i = 0 ; i < numbers.length ; i++){
         numbers[i] = Math.floor(Math.random() * 100);
@@ -101,6 +101,19 @@
     document.write("Dãy số ngẫu nhiên : " + numbers + "<br/>");
     numbers.sort(function(a , b) {return b - a});
     document.write("Dãy số  giảm dần : " + numbers);
+</script> -->
+
+<script>
+    function generateArray(size, min, max) {
+    let array = new Array(size);
+    for (let i = 0; i < array.length; i++) {
+        array[i] = Math.ceil(Math.random() * (max - min) + min);
+    }
+    //console.log(array.toString());
+    return array;
+    //generateArray(15 , 1 , 30 );
+}
+document.write(generateArray(10 , 1, 30));
 </script>
 </body>
 
