@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+body {
+    background-color:rgb(230, 231, 231);
+}
+h1 {
+    text-align: center;
+    color: rgb(26, 169, 226);
+    padding-top: 20px;
+}
+.product {
+    margin: 5px;
+    padding: 10px 5px 10px 5px;
+    background-color: white;
+    padding-top: 11px;
+    max-width: 320px;
+    float: left;
+    position: relative;
+}
+.invi {
+    position: absolute;
+    display: flex;
+    width: 96%;
+    justify-content: space-between;
+}
+.product:hover>.invi>.edit {
+    display: block;
+}
+.product:hover>.invi>.delete {
+    display: block;
+}
+.img_1 {
+    margin-top: 40px;
+    height: 230px;
+    max-width: 90%;
+    margin-left: 10px;
+}
+.logo {
+    max-width: 40%;
+    margin-top: 20px;  
+}
+.hashtag {
+    width: 25%;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.name {
+    font-size: 13px ;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    height: 30px;
+    word-wrap: break-word;
+}
+.price {
+    font-weight: bolder;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.img :hover{
+    cursor:pointer;
+    transform: scale(1.1, 1.1);
+    transition: 0.5s ease-in-out;
+}
+.table_edit {
+    display: none;
+}
+.table_add {
+    display: none;
+}
+.edit:hover{
+    cursor: pointer;
+}
+.edit {
+    display: none;   
+}
+.delete:hover {
+    cursor: pointer;
+}
+.delete {
+    display: none;
+}
+
+

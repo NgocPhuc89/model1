@@ -74,3 +74,4 @@ for (let i = 0; i < menu.length; i++) {
         // <img src="${menu[i].image}" alt="">
         // <h2>${menu[i].name}</h2>
         // <p>${menu[i].price}</p>
+        
