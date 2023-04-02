@@ -1,70 +1,134 @@
-class Screen {
-    constructor (id, img, logo, hashtag, name, price,){
+class product {
+    constructor (id, img, name, description, price,){
         this.id = id;
         this.img = img;
-        this.logo = logo;
-        this.hashtag = hashtag;
         this.name = name;
+        this.description = description;
         this.price = price;
 
     }
 }
 let screens = [
-    new Screen (1, "https://philong.com.vn/media/product/250-28187-32un650-w-1.png","https://philong.com.vn/media/brand/lg.png", "Hàng mới", "Màn Hình LG 4K 32inch 32UN650-W Tấm Nền IPS, UHD, 60Hz, HDMI, DisplayPort", 8690000, 
-                ["Tai nghe ZIDLI ZH6 Trị giá 280.000đ","Lót chuột cao cấp P02 trị giá 50.000đ"]),
-    new Screen (2, "https://philong.com.vn/media/product/250-29254-22t370-1.jpg","https://philong.com.vn/media/brand/samsung.jpg", "Bán chạy", "Màn hình 21.5 inch SAMSUNG LF22T370, Tấm nền IPS, độ phân giải Full HD, tần số quét 75Hz, Hàng chính hãng, bảo hành 24 Tháng", 2890000),
-    new Screen (3, "https://philong.com.vn/media/product/250-20714-m--n-h--nh-lcd-samsung-27-inch-lc27r500fhexxv-2.jpg", "https://philong.com.vn/media/brand/samsung.jpg", "Bán chạy", "Màn hình cong 27 SAMSUNG LC27R500FHE (Tấm Nền VA, Full HD, DSUB, HDMI, 4MS, 60HZ, Hàng chính hãng, Bảo hành 2 năm", 4490000),
-    new Screen (4, "https://philong.com.vn/media/product/250-27120-3.jpg", "https://philong.com.vn/media/brand/samsung.jpg", "Hàng mới", "Màn hình 23.8inch Samsung LS24R350FZEXXV (FHD, IPS, 75Hz, 5ms, 250nits, HDMI+VGA, bảo vệ mắt) Hàng chính hãng", 3140000),
-    new Screen (5, "https://philong.com.vn/media/product/250-28089-vz249ehe-8.jpg","https://philong.com.vn/media/brand/asus.png","Bán chạy","Màn hình siêu mỏng 24 inch ASUS VZ24EHE, Tấm nền IPS, Full HD, 75Hz, 1MS, Tính năng bảo vệ mắt,Hàng chính hãng bảo hành 36 tháng", 3090000),
-    new Screen (6, "https://philong.com.vn/media/product/250-29610-man-hinh-lenovo-q27q-20-66efgac3-philong3.png", "https://philong.com.vn/media/brand/lenovo.jpg", "Bán chạy", "Màn Hình Lenovo 2K 27 inch Q27q-20 66EFGAC3VN (QHD, IPS, 75Hz, 300nits, 4ms-6ms, DP, HDMI", 5990000),
-    new Screen (7, "https://philong.com.vn/media/product/250-21101-27r350-5.jpg", "https://philong.com.vn/media/brand/samsung.jpg", "Bán chạy", "Màn hình 27 SAMSUNG LS27R350FHE, tấm nền IPS, Full HD, 75Hz, Bảo vệ mắt, Hàng chính hãng, bảo hành 24 tháng", 4090000),
-    new Screen (8, "https://philong.com.vn/media/product/250-14672-c27f397fhe.jpg", "https://philong.com.vn/media/brand/samsung.jpg", "Hàng mới", "Màn hình cong 27 SAMSUNG C27F397FHE, màu trắng, tấm nền VA, độ phân giải full HD, 60Hz, Hàng chính hãng, Bảo hành 2 năm", 4490000, )
+    new product (1, "https://philong.com.vn/media/product/250-28187-32un650-w-1.png","LG", "Màn Hình LG 4K 32inch 32UN650-W ", 8690000),
+    new product (2, "https://philong.com.vn/media/product/250-29254-22t370-1.jpg","SAMSUNG", "Màn hình 21.5 inch SAMSUNG LF22T370", 2890000),
+    new product (3, "https://philong.com.vn/media/product/250-20714-m--n-h--nh-lcd-samsung-27-inch-lc27r500fhexxv-2.jpg", "SAMSUNG", "Màn hình cong 27 SAMSUNG LC27R500FHE", 4490000),
+    new product (4, "https://philong.com.vn/media/product/250-27120-3.jpg", "SAMSUNG", "Màn hình 23.8inch Samsung LS24R350FZEXXV ", 3140000),
+    new product (5, "https://philong.com.vn/media/product/250-28089-vz249ehe-8.jpg","ASUS","Màn hình siêu mỏng 24 inch ASUS VZ24EHE", 3090000),
+    new product (16, "https://philong.com.vn/media/product/250-29610-man-hinh-lenovo-q27q-20-66efgac3-philong3.png", "LENOVO", "Màn Hình Lenovo 2K 27 inch Q27q-20 66EFGAC3VN", 5990000),
+    new product (7, "https://philong.com.vn/media/product/250-21101-27r350-5.jpg", "SAMSUNG", "Màn hình 27 SAMSUNG LS27R350FHE", 4090000),
+    new product (8, "https://philong.com.vn/media/product/250-14672-c27f397fhe.jpg", "SAMSUNG", "Màn hình cong 27 SAMSUNG C27F397FHE", 4490000, )
 ]
-function computerScreen(){
+function drawScreens(){
+    document.querySelector('.containers').innerHTML = "";
 for ( let i = 0 ; i < screens.length ; i++) {
-    document.querySelector('.computer').innerHTML +=
+    document.querySelector('.containers').innerHTML +=
     `
         <div class="product">
-            <div class="invi">
-                <p class="edit" onclick="editinfo()">Edit</p>
-                <p class="delete" onclick="deleteinfo()">Delete</p>
+            <div class="button">
+                <p class="edit" onclick="editClick(${screens[i].id})">Edit</p>
+                <p class="delete" onclick="deleteClick(${screens[i].id})">Delete</p>
             </div>
             <div class="img">
-                <img class="img_1"src="${screens[i].img}" alt="">
+                <img class="photo"src="${screens[i].img}" alt="">
             </div>
-            <img class="logo" src="${screens[i].logo}">
-            <p class="hashtag">${screens[i].hashtag}</p>
-            <h3 class="name">${screens[i].name.toLocaleUpperCase().substring(0, 50)}...</h3>
+            <h3 class="name">${screens[i].name}</h3>
+            <h3 class="description">${screens[i].description}</h3>
             <p class="price">${formatCurrency(screens[i].price)}</p>
         </div>     
     `
 }
 }
-// //let computer = document.getElementsByClassName('computer');
-computerScreen();
+drawScreens();
 function formatCurrency(number){
     return number.toLocaleString('vi-VN', {style : 'currency', currency : 'VND'});
 }
-function addinfo(){
+function addClick(){
     document.getElementsByClassName('table_add')[0].style.display = "block";
 }
-function editinfo(){
+function editClick(){
     document.getElementsByClassName('table_edit')[0].style.display = "block";
 }
-function cancelinfo_1(){
+function cancelClick_1(){
     document.getElementsByClassName('table_add')[0].style.display = "none";
 }
-function cancelinfo_2(){
+function cancelClick_2(){
     document.getElementsByClassName('table_edit')[0].style.display = "none";
 }
-function addInfomation(){
-    let img = document.getElementsByClassName('img-add')[0].innerHTML;
-    let logo = document.getElementsByClassName('logo-add')[0].innerHTML;
-    let hashtag = document.getElementsByClassName('hashtag-add')[0].innerHTML;
-    let name = document.getElementsByClassName('name-add')[0].innerHTML;
-    let price = +document.getElementsByClassName('price-add')[0].innerHTML;
-    let p = new Screen(id, img, logo, hashtag, name, price);
-    screens.push(p);
-    computerScreen();
+function addProducts(){
+    let errors = [];
+    let img = document.getElementById("img-add").value;
+    let name = document.getElementById("name-add").value ;
+    let description = document.getElementById("description-add").value;
+    let price = +document.getElementById("price-add").value;
+
+    if(img == ''){
+        errors.push('Hình ảnh sản phẩm không được để trống');
+    }
+    if(name == ''){
+        errors.push('Tên sản phẩm không được để trống');
+    }
+    if(description == ''){
+        errors.push('Mô tả sản phẩm không được để trống');
+    }
+    if(errors.length > 0){
+        let note = "";
+        for(let i = 0 ; i < errors.length ; i++){
+            note += errors[i] + "\n";
+        }
+        alert(note);
+    }else{
+        let id;
+        if( getMaxId() == -1 ){
+            id = 1;
+        }else{
+            id = getMaxId();
+        }
+        let addnew = new product(id, img, name, description, price);
+        screens.push(addnew);
+        document.getElementsByClassName('table_add')[0].style.display = "none";
+        drawScreens();
+    }
+
 }
 
+function getMaxId(){
+    if (screens.length > 0){
+        let maxId = screens[0];
+        for(let i = 1 ; i < screens.length; i++){
+            if(screens[i].id > maxId.id ){
+                maxId = screens[i];
+            }
+        }
+        return maxId.id + 1 ;
+    }else{
+        return -1;
+    }
+}
+
+
+function deleteClick(id){
+    let check = confirm ("Bạn có chắc chắn xóa không?");
+    if ( check ){
+        for ( let i = 0 ; i < screens.length ; i++){
+            if( screens[i].id == id){
+                screens.splice(i , 1);
+                break;
+            }
+        }
+        drawScreens();
+    }
+}
+
+function editProducts(id){
+    for ( let i = 0 ; i < screens.length ; i++){
+        if ( screens[i].id = id){
+            document.getElementById("img-edit").value = product.img ;
+            document.getElementById("name-edit").value = product.name ;
+            document.getElementById("description-edit").value = product.description ;
+            document.getElementById("price-edit").value = product.price ;
+        }
+        else{
+            return null;
+        }
+    }
+}

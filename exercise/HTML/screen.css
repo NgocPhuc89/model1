@@ -9,51 +9,42 @@ body {
 }
 h1 {
     text-align: center;
-    color: rgb(26, 169, 226);
+    color: rgb(5, 9, 243);
     padding-top: 20px;
+}
+.containers {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
 }
 .product {
     margin: 5px;
     padding: 10px 5px 10px 5px;
     background-color: white;
     padding-top: 11px;
-    max-width: 320px;
-    float: left;
+    width: 30%;
     position: relative;
+    border-radius: 5px;
 }
-.invi {
+.name {
+    color: brown;
+}
+.button {
     position: absolute;
     display: flex;
     width: 96%;
     justify-content: space-between;
 }
-.product:hover>.invi>.edit {
+.product:hover>.button>.delete , .product:hover>.button>.edit  {
     display: block;
 }
-.product:hover>.invi>.delete {
-    display: block;
-}
-.img_1 {
+.photo {
     margin-top: 40px;
     height: 230px;
-    max-width: 90%;
-    margin-left: 10px;
+    max-width: 60%;
+    margin-left: 30px;
 }
-.logo {
-    max-width: 40%;
-    margin-top: 20px;  
-}
-.hashtag {
-    width: 25%;
-    background-color: orange;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    border-radius: 2px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-.name {
+.description {
     font-size: 13px ;
     text-transform: uppercase;
     font-weight: bolder;
@@ -71,22 +62,36 @@ h1 {
     transform: scale(1.1, 1.1);
     transition: 0.5s ease-in-out;
 }
-.table_edit {
-    display: none;
+.icon {
+    cursor: pointer;
 }
 .table_add {
+    background-color: aqua;
+    width: 400px;
+    top: 100px;
+    left: 500px;
+    height: 140px;
+    position: fixed;
     display: none;
+    color: blue;
+}
+.table_edit {
+    background-color: aqua;
+    width: 400px;
+    top: 100px;
+    left: 1000px;
+    height: 140px;
+    position: fixed;
+    display: none;
+    color: blue;
 }
 .edit:hover{
     cursor: pointer;
 }
-.edit {
-    display: none;   
-}
 .delete:hover {
     cursor: pointer;
 }
-.delete {
+.delete, .edit {
     display: none;
 }
 
